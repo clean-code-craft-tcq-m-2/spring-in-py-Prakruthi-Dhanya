@@ -1,3 +1,7 @@
+import statistics
 
 def calculateStats(numbers):
-  return None
+  avg=sum(numbers)/len(numbers)
+  maximum=max(numbers)
+  minimum=min(numbers)
+  return avg,maximum,minimum
