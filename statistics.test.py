@@ -4,12 +4,13 @@ import math
 
 class StatsTest(unittest.TestCase):
   def test_report_min_max_avg(self):
-    computedStats = statistics.calculateStats([1.5, 8.9, 3.2, 4.5])
+    avg,maximum,minimum = statistics.calculateStats([1.5, 8.9, 3.2, 4.5])
     epsilon = 0.001
-    average=computedStats["avg"]
-    self.assertAlmostEqual(average, 4.525, delta=epsilon)
-    self.assertAlmostEqual(computedStats["max"], 8.9, delta=epsilon)
-    self.assertAlmostEqual(computedStats["min"], 1.5, delta=epsilon)
+    #average=computedStats["avg"]
+    self.assertAlmostEqual(avg, 4.525, delta=epsilon)
+    self.assertAlmostEqual(maximum, 8.9, delta=epsilon)
+    #self.assertAlmostEqual(computedStats["min"], 1.5, delta=epsilon)
+    self.assertAlmostEqual(minimum, 1.5, delta=epsilon)
 
   def test_avg_is_nan_for_empty_input(self):
     computedStats = statistics.calculateStats([float("nan"),5,6])
